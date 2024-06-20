@@ -1,77 +1,63 @@
 "use client";
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "./hooks";
-import { useFetchBreedsQuery } from "./features/dogs/dogs-api-slice";
+import { useGetMoviesQuery } from "./features/movies/movies-slice";
+import Image from "next/image";
 
 export default function Home() {
   const dispatch = useAppDispatch();
 
-  const [numDogs, setNumDogs] = useState(10);
-  const { data = [], isFetching } = useFetchBreedsQuery(numDogs);
+  const { data = [], isFetching } = useGetMoviesQuery();
 
   return (
-    <>
-      <div className="App">
-        <header className="App-header">
-          <p>Hello Vite + React!</p>
-
-          <div>
-            <p>Dogs to fetch:</p>
-            <select
-              value={numDogs}
-              onChange={(e) => setNumDogs(Number(e.target.value))}>
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-              <option value="20">20</option>
-            </select>
+    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+          <div className="px-4 py-5 sm:px-6">
+            <h3 className="text-lg leading-6 font-medium text-gray-900">
+              Movies
+            </h3>
+            <p className="mt-1 max-w-2xl text-sm text-gray-500">
+              Number of movies fetched: {data.length}
+            </p>
           </div>
-
-          <div>
-            <p>Number of dogs fetched: {data.length}</p>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Picture</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data.map((breed) => (
-                  <tr key={breed.id}>
-                    <td>{breed.name}</td>
-                    <td>
-                      <img
-                        src={breed.image.url}
-                        alt={breed.name}
-                        height={250}
-                      />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="border-t border-gray-200">
+            <div className="overflow-hidden">
+              <div className="bg-white shadow overflow-hidden sm:rounded-md">
+                <ul role="list" className="divide-y divide-gray-200">
+                  {data.map((movie) => (
+                    <li key={movie.id} className="px-4 py-4 sm:px-6">
+                      <div className="flex items-center justify-between">
+                        <div className="flex-shrink-0">
+                          <Image
+                            src={movie.image.medium}
+                            width={100}
+                            height={100}
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                            }}
+                            className="h-10 w-10 rounded-md"
+                            alt="Picture of the author"
+                            priority={true}
+                          />
+                        </div>
+                        <div className="ml-4 flex-1 md:flex md:justify-between md:items-center">
+                          <div>
+                            <p className="text-sm font-medium text-indigo-600 truncate">
+                              {movie.name}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
-
-          <p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer">
-              Learn React
-            </a>
-            {" | "}
-            <a
-              className="App-link"
-              href="https://vitejs.dev/guide/features.html"
-              target="_blank"
-              rel="noopener noreferrer">
-              Vite Docs
-            </a>
-          </p>
-        </header>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

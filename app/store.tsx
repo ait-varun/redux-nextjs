@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { apiSlice } from "./features/dogs/dogs-api-slice";
+import { apiSlice } from "./features/movies/movies-slice";
 
 export const store = configureStore({
   reducer: {
