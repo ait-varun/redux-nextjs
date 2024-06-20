@@ -11,7 +11,10 @@ export const apiSlice = createApi({
     getMovies: builder.query<MoviesList[], void>({
       query: () => "/shows",
     }),
+    getMovie: builder.query<MoviesList, any>({
+      query: (id) => `/shows/${id}`,
+    }),
   }),
 });
 
-export const { useGetMoviesQuery } = apiSlice;
+export const { useGetMoviesQuery, useGetMovieQuery } = apiSlice;

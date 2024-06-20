@@ -1,6 +1,7 @@
 "use client";
 import { useGetMoviesQuery } from "@/app/features/movies/movies-slice";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function MoviesList() {
   const { data = [], isFetching } = useGetMoviesQuery();
@@ -24,36 +25,39 @@ export default function MoviesList() {
                   role="list"
                   className="divide-y divide-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-4 p-4">
                   {data.map((movie) => (
-                    <li
-                      key={movie.id}
-                      className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                      <div className="flex flex-col items-center justify-center">
-                        <div className="w-full">
-                          <Image
-                            src={movie.image.original}
-                            width={500}
-                            height={300}
-                            alt={movie.name}
-                            priority={true}
-                            className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill"
-                          />
+                    <Link href={`/movies/${movie.id}`} key={movie.id}>
+                      {" "}
+                      <li
+                        key={movie.id}
+                        className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <div className="flex flex-col items-center justify-center">
+                          <div className="w-full">
+                            <Image
+                              src={movie.image.original}
+                              width={500}
+                              height={300}
+                              alt={movie.name}
+                              priority={true}
+                              className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill"
+                            />
+                          </div>
+                          <div className="mt-4">
+                            <p className="text-xl font-bold text-gray-900">
+                              {movie.name}
+                            </p>
+                            <p className="text-sm font-medium text-gray-600">
+                              Rating: {movie.rating.average}
+                            </p>
+                            <p className="text-sm font-medium text-gray-600">
+                              Country: {movie.network?.country?.name}
+                            </p>
+                            <p className="text-sm font-medium text-gray-600">
+                              Runtime: {movie.runtime}
+                            </p>
+                          </div>
                         </div>
-                        <div className="mt-4">
-                          <p className="text-xl font-bold text-gray-900">
-                            {movie.name}
-                          </p>
-                          <p className="text-sm font-medium text-gray-600">
-                            Rating: {movie.rating.average}
-                          </p>
-                          <p className="text-sm font-medium text-gray-600">
-                            Country: {movie.network?.country?.name}
-                          </p>
-                          <p className="text-sm font-medium text-gray-600">
-                            Runtime: {movie.runtime}
-                          </p>
-                        </div>
-                      </div>
-                    </li>
+                      </li>
+                    </Link>
                   ))}
                 </ul>
               </div>
