@@ -9,8 +9,8 @@ export default function MoviesList() {
   const { data = [], isFetching } = useGetMoviesQuery();
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center ">
+      <div>
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
           <div className="px-4 py-5 sm:px-6">
             <h3 className="text-lg leading-6 font-medium text-gray-900">
