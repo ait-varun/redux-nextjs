@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useAppDispatch, useAppSelector } from "./hooks";
+import { useAppDispatch, useAppSelector } from "./hooks/hooks";
 import { useGetMoviesQuery } from "./features/movies/movies-slice";
 import Image from "next/image";
 
