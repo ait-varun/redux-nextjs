@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { MoviesList, SearchList } from "@/app/types/movies-list";
+import { ShowsList, SearchList } from "@/app/types/shows-list";
 
 export const apiSlice = createApi({
   reducerPath: "api",
@@ -7,18 +7,18 @@ export const apiSlice = createApi({
     baseUrl: "https://api.tvmaze.com",
   }),
   endpoints: (builder) => ({
-    // The `getMovies` endpoint is a "query" operation that returns data
-    getMovies: builder.query<MoviesList[], void>({
+    // The `getShows` endpoint is a "query" operation that returns data
+    getShows: builder.query<ShowsList[], void>({
       query: () => "/shows",
     }),
-    getMovie: builder.query<MoviesList, any>({
+    getShow: builder.query<ShowsList, any>({
       query: (id) => `/shows/${id}`,
     }),
-    searchMovies: builder.query<SearchList[], any>({
+    searchShow: builder.query<SearchList[], any>({
       query: (query) => `/search/shows?q=${query}`,
     }),
   }),
 });
 
-export const { useGetMoviesQuery, useGetMovieQuery, useSearchMoviesQuery } =
+export const { useGetShowsQuery, useGetShowQuery, useSearchShowQuery } =
   apiSlice;
