@@ -1,12 +1,12 @@
 "use client";
 
-import { useGetMovieQuery } from "@/app/features/movies/movies-slice";
+import { useGetShowQuery } from "@/app/features/shows/shows-slice";
 import { MoveLeftIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Page({ params }: { params: { id: string } }) {
-  const { data, isFetching } = useGetMovieQuery(params.id);
+  const { data, isFetching } = useGetShowQuery(params.id);
   return (
     <>
       {isFetching ? (

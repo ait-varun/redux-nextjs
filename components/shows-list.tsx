@@ -1,10 +1,10 @@
 "use client";
-import { useGetMoviesQuery } from "@/app/features/movies/movies-slice";
+import { useGetShowsQuery } from "@/app/features/shows/shows-slice";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function MoviesList() {
-  const { data = [], isFetching } = useGetMoviesQuery();
+export default function ShowsList() {
+  const { data = [], isFetching } = useGetShowsQuery();
 
   return (
     <>
@@ -32,7 +32,7 @@ export default function MoviesList() {
                       role="list"
                       className="divide-y divide-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-4 p-4">
                       {data.map((movie) => (
-                        <Link href={`/movies/${movie.id}`} key={movie.id}>
+                        <Link href={`/shows/${movie.id}`} key={movie.id}>
                           {" "}
                           <li className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                             <div className="flex flex-col justify-center">

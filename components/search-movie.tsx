@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useSearchMoviesQuery } from "@/app/features/movies/movies-slice";
+import { useSearchShowQuery } from "@/app/features/shows/shows-slice";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -8,7 +8,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 export default function SearchMovie() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showScrollArea, setShowScrollArea] = useState(false);
-  const { data = [], isFetching } = useSearchMoviesQuery(searchQuery);
+  const { data = [], isFetching } = useSearchShowQuery(searchQuery);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
@@ -21,7 +21,7 @@ export default function SearchMovie() {
         <div className="flex items-center">
           <input
             type="text"
-            placeholder="Search movies..."
+            placeholder="Search shows..."
             value={searchQuery}
             onChange={handleSearchChange}
             className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
@@ -37,7 +37,7 @@ export default function SearchMovie() {
             ) : (
               <>
                 {data.map((movie) => (
-                  <Link href={`/movies/${movie.show.id}`} key={movie.show.id}>
+                  <Link href={`/shows/${movie.show.id}`} key={movie.show.id}>
                     <div className="flex items-center px-4 py-2 hover:bg-gray-100">
                       <Image
                         src={
