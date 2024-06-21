@@ -30,7 +30,7 @@ export default function SearchMovie() {
       </div>
 
       {showScrollArea && (
-        <div className="fixed top-[4.8rem] left-0 right-0 bottom-0 bg-black bg-opacity-50 z-50 flex pt-4 justify-center px-4 w-full">
+        <div className="fixed top-[4.6rem] left-0 right-0 bottom-0 bg-black bg-opacity-50 z-50 flex pt-4 justify-center px-4 w-full">
           <ScrollArea className="h-[80vh] w-full rounded-md bg-white p-4">
             {isFetching ? (
               <div className="flex justify-center items-center">
@@ -42,24 +42,35 @@ export default function SearchMovie() {
               </div>
             ) : (
               <>
-                {data.map((movie) => (
-                  <Link href={`/shows/${movie.show.id}`} key={movie.show.id}>
-                    <div className="flex items-center px-4 py-2 hover:bg-gray-100">
-                      <Image
-                        src={
-                          movie.show.image?.medium
-                            ? movie.show.image?.medium
-                            : "https://robohash.org/mail@ashallendesign.co.uk"
-                        }
-                        alt={movie.show.name}
-                        width={500}
-                        height={300}
-                        className="w-16 h-16 rounded-md object-cover mr-4"
-                      />
-                      <span>{movie.show.name}</span>
-                    </div>
-                  </Link>
-                ))}
+                {data.length > 0 ? (
+                  <>
+                    {" "}
+                    {data.map((movie) => (
+                      <Link
+                        href={`/shows/${movie.show.id}`}
+                        key={movie.show.id}>
+                        <div className="flex items-center px-4 py-2 hover:bg-gray-100">
+                          <Image
+                            src={
+                              movie.show.image?.medium
+                                ? movie.show.image?.medium
+                                : "https://robohash.org/mail@ashallendesign.co.uk"
+                            }
+                            alt={movie.show.name}
+                            width={500}
+                            height={300}
+                            className="w-16 h-16 rounded-md object-cover mr-4"
+                          />
+                          <span>{movie.show.name}</span>
+                        </div>
+                      </Link>
+                    ))}
+                  </>
+                ) : (
+                  <div className="flex items-center justify-center px-4 py-2 hover:bg-gray-100">
+                    <h2 className="text-2xl font-bold">No Shows found</h2>
+                  </div>
+                )}
               </>
             )}
           </ScrollArea>
