@@ -42,24 +42,35 @@ export default function SearchMovie() {
               </div>
             ) : (
               <>
-                {data.map((movie) => (
-                  <Link href={`/shows/${movie.show.id}`} key={movie.show.id}>
-                    <div className="flex items-center px-4 py-2 hover:bg-gray-100">
-                      <Image
-                        src={
-                          movie.show.image?.medium
-                            ? movie.show.image?.medium
-                            : "https://robohash.org/mail@ashallendesign.co.uk"
-                        }
-                        alt={movie.show.name}
-                        width={500}
-                        height={300}
-                        className="w-16 h-16 rounded-md object-cover mr-4"
-                      />
-                      <span>{movie.show.name}</span>
-                    </div>
-                  </Link>
-                ))}
+                {data.length > 0 ? (
+                  <>
+                    {" "}
+                    {data.map((movie) => (
+                      <Link
+                        href={`/shows/${movie.show.id}`}
+                        key={movie.show.id}>
+                        <div className="flex items-center px-4 py-2 hover:bg-gray-100">
+                          <Image
+                            src={
+                              movie.show.image?.medium
+                                ? movie.show.image?.medium
+                                : "https://robohash.org/mail@ashallendesign.co.uk"
+                            }
+                            alt={movie.show.name}
+                            width={500}
+                            height={300}
+                            className="w-16 h-16 rounded-md object-cover mr-4"
+                          />
+                          <span>{movie.show.name}</span>
+                        </div>
+                      </Link>
+                    ))}
+                  </>
+                ) : (
+                  <div className="flex items-center justify-center px-4 py-2 hover:bg-gray-100">
+                    <h2 className="text-2xl font-bold">No Shows found</h2>
+                  </div>
+                )}
               </>
             )}
           </ScrollArea>
