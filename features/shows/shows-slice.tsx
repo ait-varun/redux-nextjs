@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { ShowsList, SearchList } from "@/app/types/shows-list";
+import { ShowsList, SearchList } from "@/types/shows-list";
 
 export const apiSlice = createApi({
   reducerPath: "api",
