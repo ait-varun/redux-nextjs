@@ -47,16 +47,16 @@ export default function ShowsList() {
                                 />
                               </div>
                               <div className="mt-2 mb-2 ps-6">
-                                <p className="text-xl font-bold text-gray-900">
+                                <p className="text-xl font-bold text-gray-900 overflow-hidden whitespace-nowrap text-ellipsis">
                                   {movie.name}
                                 </p>
-                                <p className="text-sm font-medium text-gray-600">
+                                <p className="text-sm font-medium text-gray-600 overflow-hidden whitespace-nowrap text-ellipsis">
                                   Rating: {movie.rating.average}
                                 </p>
-                                <p className="text-sm font-medium text-gray-600">
+                                <p className="text-sm font-medium text-gray-600 overflow-hidden whitespace-nowrap text-ellipsis">
                                   Country: {movie.network?.country?.name}
                                 </p>
-                                <p className="text-sm font-medium text-gray-600">
+                                <p className="text-sm font-medium text-gray-600 overflow-hidden whitespace-nowrap text-ellipsis">
                                   Runtime: {movie.runtime} minutes
                                 </p>
                               </div>
