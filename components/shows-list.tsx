@@ -51,7 +51,6 @@ export default function ShowsList() {
                             alt={movie.name}
                             width={500}
                             height={300}
-                            priority
                             className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill"
                           />
                         </div>
