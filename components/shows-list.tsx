@@ -51,7 +51,7 @@ export default function ShowsList() {
                             alt={movie.name}
                             width={500}
                             height={300}
-                            className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill"
+                            className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill aspect-square"
                           />
                         </div>
                         <div className="mt-2 mb-2 ps-6">
