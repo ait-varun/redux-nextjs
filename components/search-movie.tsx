@@ -33,7 +33,13 @@ export default function SearchMovie() {
         <div className="fixed top-[4.8rem] left-0 right-0 bottom-0 bg-black bg-opacity-50 z-50 flex pt-4 justify-center px-4 w-full">
           <ScrollArea className="h-[80vh] w-full rounded-md bg-white p-4">
             {isFetching ? (
-              <div className="flex justify-center items-center">Searching</div>
+              <div className="flex justify-center items-center">
+                {" "}
+                <div className="flex justify-center items-center">
+                  {" "}
+                  <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-gray-900"></div>
+                </div>
+              </div>
             ) : (
               <>
                 {data.map((movie) => (
