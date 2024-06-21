@@ -34,17 +34,15 @@ export default function MoviesList() {
                       {data.map((movie) => (
                         <Link href={`/movies/${movie.id}`} key={movie.id}>
                           {" "}
-                          <li
-                            key={movie.id}
-                            className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                          <li className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                             <div className="flex flex-col justify-center">
                               <div className="w-full">
                                 <Image
                                   src={movie.image.original}
-                                  width={500}
-                                  height={300}
                                   alt={movie.name}
                                   priority={true}
+                                  width={500}
+                                  height={300}
                                   className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill"
                                 />
                               </div>

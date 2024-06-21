@@ -26,6 +26,11 @@ export interface MoviesList {
   _links: Links;
 }
 
+export interface SearchList {
+  score: number;
+  show: MoviesList;
+}
+
 export interface Links {
   self: Self;
   previousepisode: Previousepisode;
