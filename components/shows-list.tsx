@@ -41,9 +41,7 @@ export default function ShowsList() {
               <div className="border-t border-gray-200">
                 <div className="overflow-hidden">
                   <div className="bg-white shadow overflow-hidden sm:rounded-md">
-                    <ul
-                      role="list"
-                      className="divide-y divide-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-4 p-4">
+                    <ul className="divide-y divide-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-4 p-4">
                       {currentData.map((movie) => (
                         <Link href={`/shows/${movie.id}`} key={movie.id}>
                           {" "}
@@ -53,9 +51,9 @@ export default function ShowsList() {
                                 <Image
                                   src={movie.image.original}
                                   alt={movie.name}
-                                  priority={true}
                                   width={500}
                                   height={300}
+                                  priority
                                   className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill"
                                 />
                               </div>
