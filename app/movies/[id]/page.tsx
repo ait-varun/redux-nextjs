@@ -26,7 +26,10 @@ export default function Page({ params }: { params: { id: string } }) {
           </h1>
           <div className="flex flex-col md:flex-row items-center md:items-start">
             <Image
-              src={data?.image?.original || ""}
+              src={
+                data?.image?.original ||
+                "https://robohash.org/mail@ashallendesign.co.uk"
+              }
               alt={data?.name ? data?.name : ""}
               height={500}
               width={500}
@@ -53,7 +56,7 @@ export default function Page({ params }: { params: { id: string } }) {
               <p className="text-gray-600 mb-2">
                 Premiered:{" "}
                 <span className="font-semibold">
-                  {data?.premiered.toString() || "N/A"}
+                  {data?.premiered ? data?.premiered.toString() : "N/A"}
                 </span>
               </p>
               <p className="text-gray-600 mb-2">

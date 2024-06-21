@@ -24,8 +24,8 @@ export default function SearchMovie() {
         />
         {isFetching ? (
           <ul className="absolute top-full left-0 right-0 bg-white rounded-md shadow-lg mt-2">
-            <li className="flex items-center px-4 py-2 hover:bg-gray-100">
-              Loading...
+            <li className="flex justify-center items-center px-4 py-2 hover:bg-gray-100">
+              Searching
             </li>
           </ul>
         ) : (
@@ -35,7 +35,9 @@ export default function SearchMovie() {
                 <li className="flex items-center px-4 py-2 hover:bg-gray-100">
                   <Image
                     src={
-                      movie.show.image?.medium ? movie.show.image?.medium : ""
+                      movie.show.image?.medium
+                        ? movie.show.image?.medium
+                        : "https://robohash.org/mail@ashallendesign.co.uk"
                     }
                     alt={movie.show.name}
                     width={500}
