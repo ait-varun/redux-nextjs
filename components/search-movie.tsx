@@ -8,13 +8,13 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 export default function SearchMovie() {
   const [searchQuery, setSearchQuery] = useState("");
   const [showScrollArea, setShowScrollArea] = useState(false);
-  const { data = [], isFetching } = useSearchShowQuery(searchQuery);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     setShowScrollArea(e.target.value.length > 0);
   };
 
+  const { data = [], isFetching } = useSearchShowQuery(searchQuery);
   return (
     <>
       <div className="fixed top-0 left-0 right-0 bg-white z-50 shadow-md p-4">

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <SearchMovie />
-      <ScrollArea className="h-screen w-full rounded-md border p-4">
+      <ScrollArea className="h-screen w-full rounded-md border pt-6">
         <ShowsList />
       </ScrollArea>
     </>
