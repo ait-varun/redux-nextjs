@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetShowQuery } from "@/app/features/shows/shows-slice";
+import { useGetShowQuery } from "@/features/shows/shows-slice";
 import { MoveLeftIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";

@@ -1,5 +1,5 @@
 "use client";
-import { useGetShowsQuery } from "@/app/features/shows/shows-slice";
+import { useGetShowsQuery } from "@/features/shows/shows-slice";
 import Image from "next/image";
 import Link from "next/link";
 

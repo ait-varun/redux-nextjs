@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { useSearchShowQuery } from "@/app/features/shows/shows-slice";
+import { useSearchShowQuery } from "@/features/shows/shows-slice";
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollArea } from "@/components/ui/scroll-area";
