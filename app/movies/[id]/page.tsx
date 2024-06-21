@@ -36,7 +36,9 @@ export default function Page({ params }: { params: { id: string } }) {
             <div>
               <p className="text-gray-600 mb-2">
                 Language:{" "}
-                <span className="font-semibold">{data?.language}</span>
+                <span className="font-semibold">
+                  {data?.language ? data?.language : "N/A"}
+                </span>
               </p>
               <p className="text-gray-600 mb-2">
                 Rating:{" "}
@@ -53,19 +55,23 @@ export default function Page({ params }: { params: { id: string } }) {
               <p className="text-gray-600 mb-2">
                 Premiered:{" "}
                 <span className="font-semibold">
-                  {data?.premiered.toString() || "N/A"}
+                  {data?.premiered ? data?.premiered.toString() : "N/A"}
                 </span>
               </p>
               <p className="text-gray-600 mb-2">
                 Language:
-                <span className="font-semibold">{data?.language}</span>
+                <span className="font-semibold">
+                  {data?.language ? data?.language : "N/A"}
+                </span>
               </p>
               <h2 className="text-xl font-bold mb-2 text-gray-800">
                 Description
               </h2>
               <p
                 className="text-gray-600 text-balance"
-                dangerouslySetInnerHTML={{ __html: data?.summary || "" }}></p>
+                dangerouslySetInnerHTML={{
+                  __html: data?.summary || "N/A",
+                }}></p>
             </div>
           </div>
         </div>
