@@ -26,7 +26,7 @@ export default function Page({ params }: { params: { id: string } }) {
           </h1>
           <div className="flex flex-col md:flex-row items-center md:items-start">
             <Image
-              src={data?.image?.original || ""}
+              src={data?.image?.medium || ""}
               alt={data?.name ? data?.name : ""}
               height={500}
               width={500}
