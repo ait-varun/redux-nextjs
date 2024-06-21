@@ -47,10 +47,11 @@ export default function ShowsList() {
                       <div className="flex flex-col justify-center">
                         <div className="w-full">
                           <Image
-                            src={movie.image.medium}
+                            src={movie.image.original}
                             alt={movie.name}
                             width={500}
                             height={300}
+                            priority
                             className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill"
                           />
                         </div>
