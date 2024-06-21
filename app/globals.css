@@ -74,3 +74,10 @@
       @apply bg-background text-foreground;
     }
   }
+
+  .pagination {
+    --pagination-active-color: var(--primary);
+    --pagination-active-bg: var(--primary-foreground);
+    --pagination-color: var(--muted);
+    --pagination-bg: var(--card);
+  }

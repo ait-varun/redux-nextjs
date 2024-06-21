@@ -30,6 +30,7 @@ export default function ShowsList() {
           <div className="flex justify-center mt-16 py-2 sticky top-[3rem] bg-white z-40 w-full">
             {/* Render pagination */}
             <ResponsivePagination
+              className="pagination"
               current={currentPage}
               total={totalPages}
               onPageChange={setCurrentPage}
