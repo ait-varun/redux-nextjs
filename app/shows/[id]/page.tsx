@@ -30,7 +30,7 @@ export default function Page({ params }: { params: { id: string } }) {
               alt={data?.name ? data?.name : ""}
               height={500}
               width={500}
-              className="md:w-fit w-full  md:h-auto h-full min-h-96 md:max-h-96 rounded-lg md:object-cover object-fill  mb-4 md:mb-0 md:mr-8"
+              className="md:w-fit w-full  md:h-auto h-full min-h-96 md:max-h-96 rounded-lg md:object-scale-down object-fill  mb-4 md:mb-0  aspect-square"
             />
             <div>
               <p className="text-gray-600 mb-2">
