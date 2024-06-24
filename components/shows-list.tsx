@@ -15,7 +15,7 @@ export default function ShowsList() {
         </div>
       ) : (
         <>
-          <div className="bg-gray-100 flex flex-col justify-center">
+          <div className="bg-gray-100 flex flex-col justify-center mt-12">
             <>
               <ul className="divide-y divide-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-4 p-4">
                 {data.map((movie) => (
