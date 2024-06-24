@@ -30,8 +30,6 @@ const ShowCard = ({ show }: { show: ShowsList }) => (
             alt={show.name}
             width={500}
             height={300}
-            placeholder="blur"
-            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/f93PQAJaAN2rpMqlQAAAABJRU5ErkJggg=="
             priority
             className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill aspect-square"
           />
