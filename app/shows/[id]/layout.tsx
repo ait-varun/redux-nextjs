@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import StoreProvider from "@/components/store-provider";
 
 export const metadata: Metadata = {
   title: "Shows Detail",
@@ -10,5 +11,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <>{children}</>;
+  return (
+    <>
+      <StoreProvider>{children}</StoreProvider>
+    </>
+  );
 }

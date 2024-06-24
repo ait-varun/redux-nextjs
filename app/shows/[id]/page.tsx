@@ -57,12 +57,6 @@ export default function Page({ params }: { params: { id: string } }) {
                   {data?.premiered ? data?.premiered.toString() : "N/A"}
                 </span>
               </p>
-              <p className="text-gray-600 mb-2">
-                Language:
-                <span className="font-semibold">
-                  {data?.language ? data?.language : "N/A"}
-                </span>
-              </p>
               <h2 className="text-xl font-bold mb-2 text-gray-800">
                 Description
               </h2>
