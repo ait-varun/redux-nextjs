@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Page from "../shows/[id]/page";
+import Page from "../shows/[id]/page.tsx";
 import { useGetShowQuery } from "../../features/shows/shows-slice.tsx";
 import Image from "next/image";
 

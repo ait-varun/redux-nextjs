@@ -1,3 +1,4 @@
+"use client";
 import ShowsList from "@/components/shows-list";
 import SearchMovie from "@/components/search-movie";
 import { ScrollArea } from "@/components/ui/scroll-area";

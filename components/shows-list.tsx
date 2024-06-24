@@ -2,9 +2,6 @@
 import { useGetShowsQuery } from "@/features/shows/shows-slice";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import ResponsivePagination from "react-responsive-pagination";
-import "react-responsive-pagination/themes/classic.css";
 
 export default function ShowsList() {
   const { data = [], isFetching } = useGetShowsQuery();
