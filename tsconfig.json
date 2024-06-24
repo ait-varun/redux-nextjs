@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/__tests__/showsID.test.jsx"
+    "app/__tests__/showsID.test.jsx",
+    "components/__tests__/shows-list.jsx"
   ],
   "exclude": ["node_modules"]
 }

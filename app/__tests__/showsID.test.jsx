@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Page from "../shows/[id]/page";
 import { useGetShowQuery } from "../../features/shows/shows-slice.tsx";
+import Image from "next/image";
 
 jest.mock("../../features/shows/shows-slice.tsx");
 
@@ -33,30 +34,14 @@ describe("Page", () => {
     expect(screen.findByDisplayValue("Premiered: January 1, 2022"));
     expect(screen.getByText("This is a test summary.")).toBeInTheDocument();
   });
+  it("Adds correct src attribute", () => {
+    const alt = "Test Show";
+    const src = "https://example.com/image.jpg";
+    render(<Image src={src} alt={alt} width={100} height={100} />);
 
-  // it("renders loading spinner when fetching data", () => {
-  //   useGetShowQuery.mockReturnValue({
-  //     data: undefined,
-  //     isFetching: true,
-  //   });
-
-  //   render(<Page params={{ id: "1" }} />);
-
-  //   expect(screen.getByRole("status")).toBeInTheDocument();
-  // });
-
-  // it("renders default values when data is missing", () => {
-  //   useGetShowQuery.mockReturnValue({
-  //     data: {},
-  //     isFetching: false,
-  //   });
-
-  //   render(<Page params={{ id: "1" }} />);
-
-  //   expect(screen.getByText("Language: N/A")).toBeInTheDocument();
-  //   expect(screen.getByText("Rating: N/A")).toBeInTheDocument();
-  //   expect(screen.getByText("Genres: N/A")).toBeInTheDocument();
-  //   expect(screen.getByText("Premiered: N/A")).toBeInTheDocument();
-  //   expect(screen.getByText("N/A")).toBeInTheDocument();
-  // });
+    const img = screen.getByAltText(alt);
+    expect(img.getAttribute("src")).toMatch(
+      /^\/\_next\/image\?url=https%3A%2F%2Fexample\.com%2Fimage\.jpg&w=\d+&q=\d+$/
+    );
+  });
 });
