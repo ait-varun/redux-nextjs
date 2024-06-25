@@ -15,7 +15,7 @@ export default function ShowsList() {
         </div>
       ) : (
         <>
-          <div className="bg-gray-100 flex flex-col justify-center mt-12">
+          <div className="bg-gray-100 flex flex-col justify-center  mt-16">
             <>
               <ul className="divide-y divide-gray-200 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-6 gap-4 p-4">
                 {data.map((movie) => (
@@ -26,10 +26,11 @@ export default function ShowsList() {
                       <div className="flex flex-col justify-center">
                         <div className="w-full">
                           <Image
-                            src={movie.image.original}
+                            src={movie.image.original || "N/A"}
                             alt={movie.name}
                             width={500}
                             height={300}
+                            priority
                             className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill aspect-square"
                           />
                         </div>

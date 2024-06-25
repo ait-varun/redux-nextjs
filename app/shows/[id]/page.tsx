@@ -31,7 +31,8 @@ export default function Page({ params }: { params: { id: string } }) {
               height={500}
               width={500}
               priority
-              className="md:w-fit w-full  md:h-auto h-full min-h-96 md:max-h-96 rounded-lg md:object-scale-down object-fill  mb-4 md:mb-0 mr-4"
+              className="md:w-fit w-full  md:h-auto h-full min-h-96 md:max-h-96 rounded-lg md:object-scale-down object-fill  mb-4 md:mb-0  mr-4"
+
             />
             <div>
               <p className="text-gray-600 mb-2">
@@ -56,12 +57,6 @@ export default function Page({ params }: { params: { id: string } }) {
                 Premiered:{" "}
                 <span className="font-semibold">
                   {data?.premiered ? data?.premiered.toString() : "N/A"}
-                </span>
-              </p>
-              <p className="text-gray-600 mb-2">
-                Language:
-                <span className="font-semibold">
-                  {data?.language ? data?.language : "N/A"}
                 </span>
               </p>
               <h2 className="text-xl font-bold mb-2 text-gray-800">
