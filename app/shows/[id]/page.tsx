@@ -32,6 +32,7 @@ export default function Page({ params }: { params: { id: string } }) {
               width={500}
               priority
               className="md:w-fit w-full  md:h-auto h-full min-h-96 md:max-h-96 rounded-lg md:object-scale-down object-fill  mb-4 md:mb-0  mr-4"
+
             />
             <div>
               <p className="text-gray-600 mb-2">
