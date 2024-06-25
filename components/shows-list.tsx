@@ -28,10 +28,15 @@ export default function ShowsList() {
                           <Image
                             src={movie.image.original || "N/A"}
                             alt={movie.name}
-                            sizes="200px"
+                            sizes="
+                            (min-width: 768px) 100vw,
+                            (min-width: 1024px) 50vw,
+                            (min-width: 1280px) 33vw,
+
+                            "
                             width={100}
                             height={100}
-                            className="w-full h-auto min-h-96 max-h-96 rounded-t-lg"
+                            className="w-full  min-h-96 max-h-96 rounded-t-lg"
                           />
                         </div>
                         <div className="mt-2 mb-2 ps-6">
