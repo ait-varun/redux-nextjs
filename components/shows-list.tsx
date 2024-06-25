@@ -28,11 +28,10 @@ export default function ShowsList() {
                           <Image
                             src={movie.image.original || "N/A"}
                             alt={movie.name}
-                            sizes="300px"
-                            width={500}
-                            height={300}
-                            priority
-                            className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill aspect-square"
+                            sizes="200px"
+                            width={100}
+                            height={100}
+                            className=" rounded-t-lg object-fill "
                           />
                         </div>
                         <div className="mt-2 mb-2 ps-6">
