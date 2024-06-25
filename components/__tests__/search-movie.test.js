@@ -37,7 +37,6 @@ describe("SearchMovie", () => {
     expect(inputField).toBeInTheDocument();
   });
 
-
   test("renders show list when data is available", async () => {
     useSearchShowQuery.mockReturnValue({
       data: mockData,

@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-// import userReducer from "../features/users/userSlice";
+import postsReducer from "@/features/posts/posts-slice";
 import { apiSlice } from "@/features/shows/shows-slice";
 
 // Create the root reducer independently to obtain the RootState type
 const rootReducer = combineReducers({
-  // user: userReducer,
+  posts: postsReducer,
   [apiSlice.reducerPath]: apiSlice.reducer,
 });
 
