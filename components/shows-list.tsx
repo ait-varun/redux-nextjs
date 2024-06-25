@@ -26,17 +26,16 @@ export default function ShowsList() {
                       <div className="flex flex-col justify-center">
                         <div>
                           <Image
-                            src={movie.image.original || "N/A"}
+                            src={movie.image.medium || "N/A"}
                             alt={movie.name}
                             sizes="
                             (min-width: 768px) 100vw,
                             (min-width: 1024px) 50vw,
                             (min-width: 1280px) 33vw,
-
                             "
                             width={100}
                             height={100}
-                            className="w-full  min-h-96 max-h-96 rounded-t-lg"
+                            className="w-full rounded-t-lg"
                           />
                         </div>
                         <div className="mt-2 mb-2 ps-6">
