@@ -28,6 +28,7 @@ export default function ShowsList() {
                           <Image
                             src={movie.image.original || "N/A"}
                             alt={movie.name}
+                            sizes="300px"
                             width={500}
                             height={300}
                             priority
