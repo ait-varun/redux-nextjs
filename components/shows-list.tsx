@@ -24,14 +24,15 @@ export default function ShowsList() {
                     className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                     <Link href={`/shows/${movie.id}`}>
                       <div className="flex flex-col justify-center">
-                        <div className="w-full">
+                        <div>
                           <Image
                             src={movie.image.original || "N/A"}
                             alt={movie.name}
                             sizes="200px"
-                            width={100}
-                            height={100}
-                            className=" rounded-t-lg object-fill "
+                            width={10}
+                            height={10}
+                            priority
+                            className="w-full h-auto min-h-96 max-h-96 rounded-t-lg object-fill aspect-square"
                           />
                         </div>
                         <div className="mt-2 mb-2 ps-6">
