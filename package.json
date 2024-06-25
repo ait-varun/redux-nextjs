@@ -7,8 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+<<<<<<< HEAD
     "test": "jest",
     "test:watch": "jest --watch"
+=======
+    "test": "jest"
+>>>>>>> 054d9be44d52323216982e83f09d80a1b712801d
   },
   "dependencies": {
     "@radix-ui/react-scroll-area": "^1.1.0",
@@ -30,6 +34,10 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
+<<<<<<< HEAD
+=======
+    "@types/jest": "^29.5.12",
+>>>>>>> 054d9be44d52323216982e83f09d80a1b712801d
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
