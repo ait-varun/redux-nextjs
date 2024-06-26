@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "@/store/store";
 
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
@@ -16,7 +16,7 @@ interface Post {
 
 interface PostsState {
   posts: Post[];
-  status: "idle" | "loading" | "complete";
+  status: "idle" | "loading" | "complete" | "error";
 }
 
 const initialState: PostsState = {
@@ -33,12 +33,12 @@ const postSlice = createSlice({
       .addCase(fetchPosts.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchPosts.fulfilled, (state, action) => {
+      .addCase(fetchPosts.fulfilled, (state, action: PayloadAction<Post[]>) => {
         state.status = "complete";
         state.posts = action.payload;
       })
       .addCase(fetchPosts.rejected, (state) => {
-        state.status = "idle";
+        state.status = "error";
       });
   },
 });
