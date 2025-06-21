@@ -1,5 +1,5 @@
 "use client";
-import { useGetMoviesQuery } from "@/app/features/movies/movies-slice";
+import { useGetMoviesQuery } from "@/features/movies/movies-slice";
 import Image from "next/image";
 import Link from "next/link";
 

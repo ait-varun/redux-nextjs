@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetMovieQuery } from "@/app/features/movies/movies-slice";
+import { useGetMovieQuery } from "@/features/movies/movies-slice";
 import { MoveLeftIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
