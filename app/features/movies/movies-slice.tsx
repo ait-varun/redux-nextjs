@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { MoviesList } from "@/app/types/movies-list";
 
-export const apiSlice = createApi({
-  reducerPath: "api",
+export const moviesSlice = createApi({
+  reducerPath: "moviesApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "https://api.tvmaze.com",
   }),
@@ -17,4 +17,4 @@ export const apiSlice = createApi({
   }),
 });
 
-export const { useGetMoviesQuery, useGetMovieQuery } = apiSlice;
+export const { useGetMoviesQuery, useGetMovieQuery } = moviesSlice;
