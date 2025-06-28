@@ -1,7 +1,7 @@
 "use client";
 
 import { useGetShowQuery } from "@/features/movies/movies-slice";
-import { MoveLeftIcon } from "lucide-react";
+import { MoveLeftIcon, MoveRightIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { fetchCrewByShowId, clearCrew } from "@/features/shows/crew-slice";
@@ -76,7 +76,7 @@ export default function Page({ params }: { params: { id: string } }) {
               >
                 <span>Show Crew</span>
                 <span className="ml-2 text-lg transition-transform" style={{ display: 'inline-block', transform: showCrew ? 'rotate(90deg)' : 'rotate(0deg)' }}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                    <MoveRightIcon className="h-6 w-6 mr-2" />
                 </span>
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function Page({ params }: { params: { id: string } }) {
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {crewState.crew.map((crewMember, idx) => (
                     <li key={idx} className="flex items-center space-x-4 p-4 border rounded-lg bg-gray-50">
-                      {crewMember.person.image?.medium && (
+                      {crewMember.person.image?.medium ? (
                         <Image
                           src={crewMember.person.image.medium}
                           alt={crewMember.person.name}
@@ -98,6 +98,10 @@ export default function Page({ params }: { params: { id: string } }) {
                           height={500}
                           className="w-16 h-16 rounded-full object-cover"
                         />
+                      ) : (
+                        <div className="w-16 h-16 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center text-xs text-gray-400">
+                          No Image
+                        </div>
                       )}
                       <div>
                         <div className="font-semibold">{crewMember.person.name}</div>
