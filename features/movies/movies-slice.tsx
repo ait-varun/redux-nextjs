@@ -8,13 +8,13 @@ export const moviesSlice = createApi({
   }),
   endpoints: (builder) => ({
     // The `getMovies` endpoint is a "query" operation that returns data
-    getMovies: builder.query<MoviesList[], void>({
+    getShows: builder.query<MoviesList[], void>({
       query: () => "/shows",
     }),
-    getMovie: builder.query<MoviesList, string | number>({
+    getShow: builder.query<MoviesList, string | number>({
       query: (id) => `/shows/${id}`,
     }),
   }),
 });
 
-export const { useGetMoviesQuery, useGetMovieQuery } = moviesSlice;
+export const { useGetShowsQuery, useGetShowQuery } = moviesSlice;

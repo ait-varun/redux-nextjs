@@ -1,10 +1,10 @@
 "use client";
-import { useGetMoviesQuery } from "@/features/movies/movies-slice";
+import { useGetShowsQuery } from "@/features/movies/movies-slice";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function MoviesList() {
-  const { data = [], isFetching } = useGetMoviesQuery();
+  const { data = [], isFetching } = useGetShowsQuery();
 
   return (
     <>
