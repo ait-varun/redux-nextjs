@@ -31,12 +31,14 @@ export default function Page({ params }: { params: { id: string } }) {
         </div>
       ) : (
         <div className="max-w-4xl py-8 lg:mx-auto sm:mx-4 mx-4">
-          <Link href="/" className="flex items-center mb-4">
-            <MoveLeftIcon className="h-6 w-6 mr-2" />
-            <span className="text-gray-600 hover:text-gray-800 transition-colors">
-              Back to Home
-            </span>
-          </Link>
+          <div className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm py-2 mb-4" style={{marginLeft: '-1rem', marginRight: '-1rem'}}>
+            <Link href="/" className="flex items-center">
+              <MoveLeftIcon className="h-6 w-6 mr-2" />
+              <span className="text-gray-600 hover:text-gray-800 transition-colors">
+                Back to Home
+              </span>
+            </Link>
+          </div>
           <h1 className="text-3xl font-bold mb-4 text-gray-800">
             {data?.name}
           </h1>
