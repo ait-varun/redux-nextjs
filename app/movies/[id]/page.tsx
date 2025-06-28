@@ -39,7 +39,7 @@ export default function Page({ params }: { params: { id: string } }) {
               </span>
             </Link>
           </div>
-          <h1 className="text-3xl font-bold mb-4 text-gray-800">
+          <h1 className="text-3xl font-bold mb-4 text-gray-800 truncate">
             {data?.name}
           </h1>
           <div className="flex flex-col md:flex-row items-center md:items-start">

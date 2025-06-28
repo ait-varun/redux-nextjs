@@ -49,7 +49,7 @@ export default function MoviesList() {
                                 />
                               </div>
                               <div className="mt-2 mb-2 ps-6">
-                                <p className="text-xl font-bold text-gray-900">
+                                <p className="text-xl font-bold text-gray-900 truncate">
                                   {movie.name}
                                 </p>
                                 <p className="text-sm font-medium text-gray-600">
