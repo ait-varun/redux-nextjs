@@ -1,5 +1,5 @@
+import { MoviesList } from "@/types/movies-list";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { MoviesList } from "@/app/types/movies-list";
 
 export const moviesSlice = createApi({
   reducerPath: "moviesApi",

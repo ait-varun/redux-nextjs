@@ -47,7 +47,7 @@ export default function Page({ params }: { params: { id: string } }) {
               <p className="text-gray-600 mb-2">
                 Genres:{" "}
                 <span className="font-semibold">
-                  {data?.genres?.map((genre) => genre).join(", ") || "N/A"}
+                  {data?.genres?.map((genre: string) => genre).join(", ") || "N/A"}
                 </span>
               </p>
               <p className="text-gray-600 mb-2">
